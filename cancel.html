@@ -1,9 +1,33 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"/><title>Pago cancelado</title></head>
-<body style="font-family:sans-serif;background:#0b1220;color:#fff;padding:2rem">
-  <h1>Pago cancelado</h1>
-  <p>No pasa nada, puedes intentarlo de nuevo cuando quieras.</p>
-  <a href="./index.html">Volver</a>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Pago cancelado — TodoPrompt</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo">todo<span>prompt</span></a>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <h1>Pago cancelado</h1>
+        <p>No pasa nada, puedes reintentarlo cuando quieras.</p>
+        <p><a class="btn btn--primary" href="./#precio">Volver a comprar</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TodoPrompt</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

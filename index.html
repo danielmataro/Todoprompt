@@ -3,18 +3,264 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TodoPrompt — Prompts que venden (y rinden)</title>
+  <title>TodoPrompt — Prompts con cerebro (y estilo)</title>
+  <meta name="description" content="Compra prompts listos para usar. Empieza con el Prompt 1X2 LaLiga para estructurar tu análisis 1X2 con IA.">
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
   <script src="https://js.stripe.com/v3/"></script>
-  <script src="./app.js" defer></script>
 </head>
 <body>
-  <header><h1>TodoPrompt</h1></header>
-  <main>
-    <h2>Prompt 1X2 LaLiga</h2>
-    <p>Compra nuestro primer prompt para apuestas deportivas (1X2 de la Liga Española).</p>
-    <button id="buy-button">Comprar ahora</button>
-    <p id="messages"></p>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="TodoPrompt inicio">todo<span>prompt</span></a>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#que-es">Qué es</a></li>
+          <li><a href="#incluye">Incluye</a></li>
+          <li><a href="#precio">Precio</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><button id="themeToggle" class="chip">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="bg-orb orb1" aria-hidden="true"></div>
+      <div class="bg-orb orb2" aria-hidden="true"></div>
+      <div class="container grid two vcenter">
+        <div class="reveal">
+          <h1>Prompts que convierten <span class="underline">intuición</span> en <span class="underline-2">decisiones</span></h1>
+          <p class="hero-sub">Lanza tu flujo con el <strong>Prompt 1X2 LaLiga</strong>. Un sistema modular para analizar partidos con cabeza, sin humo ni promesas imposibles.</p>
+          <div class="hero-cta">
+            <a href="#precio" class="btn btn--primary">Comprar ahora</a>
+            <a href="#que-es" class="btn btn--secondary">Ver cómo funciona</a>
+          </div>
+          <div class="trust">
+            <div class="mini">Pago seguro con</div>
+            <div class="stripe-badge" aria-label="Stripe">
+              <svg width="72" height="28" viewBox="0 0 62 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="62" height="28" rx="6" fill="currentColor" opacity=".12"/>
+                <text x="31" y="19" text-anchor="middle" font-family="Inter,system-ui" font-size="12" fill="currentColor">Stripe</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="preview tilt reveal">
+          <div class="card code-preview">
+            <div class="card-head">
+              <strong>Vista previa (difuminada)</strong>
+              <button class="chip" id="toggle-blur" aria-pressed="false">Ver/ocultar</button>
+            </div>
+<pre class="blur" id="preview"><code>// Prompt Maestro 1X2 LaLiga (extracto)
+Rol: Analista disciplinado de fútbol. Objetivo: predicción 1X2 con criterios verificables.
+Inputs:
+- Partido: {Local} vs {Visitante}, Jornada {N}, Estadio {Estadio}
+- Forma 5 últimos: Local {WDL..}, Visitante {WDL..}
+- Lesiones/sanciones clave: ...
+- Cuotas mercado: 1={c1}  X={cx}  2={c2}
+- Contexto: rotaciones, clima, viajes
+
+Tareas:
+1) Resumen (máx 5 bullets).
+2) Señales pro-1 / pro-X / pro-2.
+3) Estimación % (suman 100%) + contraste con cuotas.
+4) Riesgos y sesgos.
+5) Veredicto 1X2 con razones.
+</code></pre>
+            <p class="legal-min">Protegemos el contenido. Acceso completo tras la compra.</p>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">↓</div>
+    </section>
+
+    <!-- LOGOS MARQUEE -->
+    <section class="marquee" aria-label="Modelos compatibles">
+      <div class="track">
+        <span>Compatible con GPT</span>
+        <span>Claude</span>
+        <span>Gemini</span>
+        <span>Llama</span>
+        <span>o1 / o3</span>
+        <span>GPT</span>
+        <span>Claude</span>
+        <span>Gemini</span>
+      </div>
+    </section>
+
+    <!-- QUÉ ES -->
+    <section id="que-es" class="section">
+      <div class="container grid two">
+        <div class="reveal">
+          <h2>¿Qué es el Prompt 1X2 LaLiga?</h2>
+          <p>Es un <strong>prompt maestro</strong> con mini-prompts que te obligan a pensar con método: forma reciente, lesiones, valor esperado y sesgos del mercado.</p>
+          <ul class="checklist">
+            <li>Estructura modular (usa por bloques)</li>
+            <li>Plantilla de inputs por partido</li>
+            <li>Guía breve de mejores prácticas</li>
+            <li>Listo para modelos modernos (GPT, Claude, etc.)</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="card metrics">
+            <div class="kpi">
+              <div class="kpi-num" data-count="65">0</div>
+              <div class="kpi-label">tiempo medio ahorrado (min)</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-num" data-count="3">0</div>
+              <div class="kpi-label">sesgos que controla</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-num" data-count="100">0</div>
+              <div class="kpi-label">% normalizado</div>
+            </div>
+            <p class="mini muted">Indicadores estimados a partir de pruebas internas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE -->
+    <section id="incluye" class="section alt">
+      <div class="container grid three">
+        <div class="card reveal">
+          <h3>Prompt Maestro</h3>
+          <p>Estructura 1X2 con tareas, criterios y verificación.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Mini-prompts</h3>
+          <p>Bloques para forma, lesiones, cuotas y contexto.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Plantilla de inputs</h3>
+          <p>Campos listos por partido (copia/pega).</p>
+        </div>
+        <div class="card reveal">
+          <h3>Guía breve</h3>
+          <p>Buenas prácticas y límites del método.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Actualizable</h3>
+          <p>Estructura abierta para iterar.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Soporte básico</h3>
+          <p>Correo para dudas generales (sin picks).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS (mock) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Lo que dicen</h2>
+        <div class="carousel reveal" role="region" aria-label="Opiniones">
+          <div class="slides" id="slides">
+            <article class="card slide">
+              <p>“Pude ordenar mis análisis sin perderme en narrativas. Lo que ya sabía… pero con método.”</p>
+              <footer>— Marta G.</footer>
+            </article>
+            <article class="card slide">
+              <p>“Me ahorra tiempo cada jornada. Las decisiones salen más ‘frías’ y consistentes.”</p>
+              <footer>— Iván R.</footer>
+            </article>
+            <article class="card slide">
+              <p>“No promete aciertos: te enseña a pensar mejor. Y eso ya es mucho.”</p>
+              <footer>— Sergio L.</footer>
+            </article>
+          </div>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIO -->
+    <section id="precio" class="section">
+      <div class="container grid two vcenter">
+        <div class="card highlight reveal">
+          <div class="price-head">
+            <h3>Prompt 1X2 LaLiga</h3>
+            <p class="price"><span>14,90&nbsp;€</span> <small>pago único</small></p>
+          </div>
+          <ul class="checklist">
+            <li>Acceso inmediato</li>
+            <li>Uso personal ilimitado</li>
+            <li>Actualizaciones menores</li>
+          </ul>
+          <button id="buy-button" class="btn btn--primary btn--full" data-product="TP-LALIGA-1X2" data-payment-link="">
+            Comprar ahora
+          </button>
+          <p id="messages" class="msg" role="status" aria-live="polite"></p>
+          <p class="legal-min">No se garantiza ningún resultado. Juega con responsabilidad. +18.</p>
+        </div>
+        <div class="reveal">
+          <h3>Cómo funciona</h3>
+          <ol class="steps">
+            <li>Compra segura vía Stripe.</li>
+            <li>Recibe el prompt completo y la guía.</li>
+            <li>Pega en tu asistente de IA favorito.</li>
+            <li>Rellena inputs del partido y analiza.</li>
+          </ol>
+          <div class="callout">
+            ¿Ya tienes un <strong>Payment Link</strong>? Pégalo en <code>app.js</code> o en el atributo
+            <code>data-payment-link</code> del botón.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="container grid two">
+        <div class="reveal">
+          <h2>Preguntas frecuentes</h2>
+          <details open>
+            <summary>¿Sirve para otras ligas?</summary>
+            <p>Sí, la estructura es adaptable. Esta versión está afinada para LaLiga.</p>
+          </details>
+          <details>
+            <summary>¿Necesito datos avanzados?</summary>
+            <p>No, pero mejora con inputs objetivos (lesiones, forma, cuotas reales).</p>
+          </details>
+          <details>
+            <summary>¿Incluye picks?</summary>
+            <p>No. Es un sistema de análisis, no pronósticos cerrados.</p>
+          </details>
+          <details>
+            <summary>¿Puedo pedir reembolso?</summary>
+            <p>Al ser contenido digital descargable, no se admiten devoluciones una vez entregado.</p>
+          </details>
+        </div>
+        <div class="reveal">
+          <div class="card note">
+            <h3>Transparencia radical</h3>
+            <p>La IA ayuda, pero no sustituye criterio ni disciplina. Este prompt reduce sesgos y estructura tu pensamiento.</p>
+            <p class="mini muted">Usa bankroll responsable. Si el juego deja de ser entretenimiento, para y pide ayuda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TodoPrompt. Hecho con ⚡ desde España.</p>
+      <nav class="footer-nav">
+        <a href="#" aria-disabled="true">Términos</a>
+        <a href="#" aria-disabled="true">Privacidad</a>
+        <a href="mailto:hola@tudominio.com">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
 </body>
 </html>

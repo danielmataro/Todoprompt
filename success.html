@@ -1,9 +1,34 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"/><title>Compra completada</title></head>
-<body style="font-family:sans-serif;background:#0b1220;color:#fff;padding:2rem">
-  <h1>🎉 ¡Compra completada!</h1>
-  <p>Recibirás un email con tu Prompt 1X2 LaLiga. Gracias por confiar en TodoPrompt.</p>
-  <a href="./index.html">Volver al inicio</a>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>¡Compra completada! — TodoPrompt</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo">todo<span>prompt</span></a>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <h1>¡Listo! 🎉</h1>
+        <p>Tu compra se ha completado correctamente.</p>
+        <p>En unos instantes recibirás un email con el <strong>Prompt 1X2 LaLiga</strong> y la guía breve. Si no llega, revisa SPAM o escríbenos a <a href="mailto:hola@tudominio.com">hola@tudominio.com</a>.</p>
+        <p><a class="btn btn--secondary" href="./">Volver al inicio</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TodoPrompt</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
