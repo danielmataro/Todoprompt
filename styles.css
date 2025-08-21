@@ -1,62 +1,13 @@
-
-:root{
-  --bg: #0a0b0e;
-  --fg: #ffffff;
-  --muted: #a8b0bb;
-  --card:#111319;
-  --stroke:#1b1f2a;
-  --brand:#3b82f6;
-  --brand-2:#2563eb;
-  --accent:#60a5fa;
-  --primary:#0a0b0e;
-  --primary-foreground:#ffffff;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
-a{color:var(--accent);text-decoration:none}
-.container{max-width:1120px;margin:0 auto;padding:0 20px}
-.bg-gradient-subtle{background:linear-gradient(180deg,#0b0f16,#0a0b0e)}
-.bg-secondary\/30{background:rgba(20,24,38,.3)}
-.bg-background{background:var(--bg)}
-.text-primary-foreground{color:var(--primary-foreground)}
-.text-primary-foreground\/90{color:rgba(255,255,255,.9)}
-.text-accent{color:var(--accent)}
-.text-muted-foreground{color:var(--muted)}
-.shadow-soft{box-shadow:0 4px 18px rgba(0,0,0,.25)}
-.shadow-electric{box-shadow:0 10px 30px rgba(59,130,246,.35)}
-.border{border:1px solid var(--stroke)}
-.border-accent\/20{border-color:rgba(59,130,246,.2)}
-.rounded-lg{border-radius:12px}
-.rounded-xl{border-radius:16px}
-.rounded-2xl{border-radius:20px}
-.rounded-l-none{border-top-left-radius:0;border-bottom-left-radius:0}
-.p-2{padding:8px}.p-3{padding:12px}.p-4{padding:16px}.p-6{padding:24px}.p-8{padding:32px}
-.pt-6{padding-top:24px}.pb-6{padding-bottom:24px}.pb-8{padding-bottom:32px}.mb-2{margin-bottom:8px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}.mb-8{margin-bottom:32px}.mt-2{margin-top:8px}.mt-8{margin-top:32px}
-.w-full{width:100%}.h-auto{height:auto}
-.min-h-screen{min-height:100vh}
-.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}
-.inset-0{top:0;left:0;right:0;bottom:0}
-.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}
-.grid{display:grid}.grid-cols-1{grid-template-columns:1fr}
-.md\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
-.lg\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
-.lg\:grid-cols-3{grid-template-columns:repeat(3,1fr)}
-.gap-6{gap:24px}.gap-8{gap:32px}.gap-12{gap:48px}.gap-16{gap:64px}
-.text-center{text-align:center}
-.font-bold{font-weight:700}.font-semibold{font-weight:600}
-.text-4xl{font-size:2.25rem}.md\:text-5xl{font-size:3rem}.md\:text-6xl{font-size:3.75rem}.lg\:text-7xl{font-size:4.5rem}
-.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}.text-6xl{font-size:3.75rem}
-.leading-tight{line-height:1.1}.leading-relaxed{line-height:1.6}
-.mx-auto{margin-left:auto;margin-right:auto}
-.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--stroke);background:#141826;color:#fff;font-weight:700;cursor:pointer}
-.btn.electric{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none}
-.btn.outline-light{background:transparent;border-color:rgba(255,255,255,.35)}
-.card{background:var(--card);border:1px solid var(--stroke);border-radius:14px}
-.section{padding:96px 0;border-top:1px solid var(--stroke)}
-.footer{color:var(--muted);font-size:14px}
-@media (max-width: 920px){
-  .md\:grid-cols-2{grid-template-columns:1fr}
-  .lg\:grid-cols-2{grid-template-columns:1fr}
-  .lg\:grid-cols-3{grid-template-columns:1fr}
-}
+body {font-family: Arial, sans-serif;margin:0;padding:0;background:#f9f9f9;color:#222;}
+header.hero {text-align:center;padding:50px;background:url('assets/real-stadium.jpg') center/cover no-repeat;color:#fff;}
+header.hero .logo {width:120px;margin-bottom:20px;}
+header.hero h1 {font-size:2.5rem;margin:0;}
+header.hero p {margin:10px 0;font-size:1.2rem;}
+header.hero .cta {display:inline-block;margin-top:20px;padding:15px 25px;background:#ff6600;color:#fff;text-decoration:none;border-radius:5px;font-weight:bold;}
+section {padding:40px 20px;text-align:center;}
+section.benefits h2 span {color:#ff6600;}
+section.benefits ul {list-style:none;padding:0;max-width:500px;margin:20px auto;text-align:left;}
+section.benefits li {margin:10px 0;padding-left:20px;position:relative;}
+section.benefits li::before {content:"✔";position:absolute;left:0;color:#ff6600;}
+footer {text-align:center;padding:20px;background:#222;color:#fff;margin-top:40px;}
+footer a {color:#ff6600;text-decoration:none;}
