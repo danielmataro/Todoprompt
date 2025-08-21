@@ -1,3 +1,5 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("TodoPrompt LaLiga Value Edge 25-26 cargado correctamente.");
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear().toString();
 });
