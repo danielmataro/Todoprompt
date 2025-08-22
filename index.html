@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TodoPrompt — Prompts y algoritmos para IA</title>
   <meta name="description" content="TodoPrompt. Especialistas en el desarrollo de prompts y algoritmos para optimizar el rendimiento de tus modelos de IA." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="logoblanco.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Inicio TodoPrompt">
+      <a class="brand" href="#top" aria-label="TodoPrompt, inicio">
         <img src="logoblanco.jpg" alt="Logo TodoPrompt" class="brand-logo reveal" />
         <span class="brand-name">TodoPrompt</span>
       </a>
+
       <nav class="nav">
         <a href="#productos" class="nav-link">Productos</a>
         <a href="#contacto" class="nav-link">Contacto</a>
+        <button id="toggleAdmin" class="btn btn-ghost" aria-expanded="false" aria-controls="adminPanel" title="Modo gestor">⚙️</button>
       </nav>
     </div>
   </header>
@@ -37,9 +41,19 @@
 
     <section id="productos" class="section">
       <div class="container">
-        <h2 class="reveal">Nuestros productos</h2>
+        <div class="section-head">
+          <h2 class="reveal">Nuestros productos</h2>
+          <div class="tools reveal">
+            <input id="searchInput" type="search" placeholder="Buscar producto..." aria-label="Buscar producto" />
+            <button id="exportBtn" class="btn btn-soft" title="Exportar productos a JSON">Exportar JSON</button>
+            <label class="file-btn">
+              Importar JSON
+              <input id="importInput" type="file" accept="application/json" />
+            </label>
+          </div>
+        </div>
         <div id="gridProductos" class="grid"></div>
-        <p id="emptyMsg" class="empty" hidden>No hay productos disponibles.</p>
+        <p id="emptyMsg" class="empty" hidden>No hay productos que coincidan con tu búsqueda.</p>
       </div>
     </section>
 
@@ -59,6 +73,34 @@
       <a href="#top" class="to-top" aria-label="Volver arriba">↑</a>
     </div>
   </footer>
+
+  <!-- Panel gestor (añadir productos) -->
+  <aside id="adminPanel" class="admin" hidden>
+    <form id="adminForm" class="admin-form" autocomplete="off">
+      <h3>Añadir producto</h3>
+      <div class="two">
+        <label>Nombre
+          <input type="text" name="name" required />
+        </label>
+        <label>Precio (€)
+          <input type="number" name="price" min="0" step="0.01" required />
+        </label>
+      </div>
+      <label>Descripción
+        <textarea name="description" rows="3" required></textarea>
+      </label>
+      <label>Imagen (URL o archivo en la raíz)
+        <input type="text" name="image" placeholder="ej.: producto1.jpg o https://..." />
+      </label>
+      <div class="two">
+        <button class="btn btn-primary" type="submit">Guardar producto</button>
+        <button class="btn btn-ghost" type="button" id="closeAdmin">Cerrar</button>
+      </div>
+      <p class="note">⚠️ El gestor guarda en tu navegador (localStorage). Exporta el JSON para subirlo al servidor.</p>
+    </form>
+  </aside>
+
+  <div id="structured-data" aria-hidden="true"></div>
 
   <script src="app.js"></script>
 </body>
