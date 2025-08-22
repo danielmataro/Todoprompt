@@ -1,6 +1,7 @@
-const PHONE_INTL = "34634633801";
-const WHATSAPP_BASE = `https://wa.me/${PHONE_INTL}?text=`;
+// Año dinámico
+document.getElementById("year").textContent = new Date().getFullYear();
 
+// Productos (sin número de teléfono y con botón 'Solicitar')
 const defaultProducts = [
   {
     id: 1,
@@ -12,33 +13,64 @@ const defaultProducts = [
 ];
 
 const grid = document.getElementById("gridProductos");
-const yearEl = document.getElementById("year");
-const ctaWhatsapp = document.getElementById("ctaWhatsapp");
-
-yearEl.textContent = new Date().getFullYear();
-ctaWhatsapp.href = WHATSAPP_BASE + encodeURIComponent("Hola, quiero hablar con TodoPrompt 🙂");
+const emptyMsg = document.getElementById("emptyMsg");
 
 function formatPriceEUR(value) {
   return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(value);
 }
 
-function makeWhatsAppLink(product) {
-  const msg = `Hola, quiero solicitar el producto "${product.name}" por ${formatPriceEUR(product.price)}.`;
-  return WHATSAPP_BASE + encodeURIComponent(msg);
+// Botón 'Solicitar' → correo con asunto y cuerpo pre-rellenado
+function makeMailLink(product){
+  const subject = encodeURIComponent(`Solicitud de ${product.name}`);
+  const body = encodeURIComponent(
+    `Hola,\n\nMe interesa el producto "${product.name}" (${formatPriceEUR(product.price)}).\nPor favor, enviadme más información y cómo proceder.\n\nGracias.\n`
+  );
+  return `mailto:todoprompt@gmail.com?subject=${subject}&body=${body}`;
 }
 
-function render() {
-  grid.innerHTML = defaultProducts.map(p => `
-    <article class="card">
-      <img src="${p.image}" alt="Imagen de ${p.name}" />
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <p class="price">${formatPriceEUR(p.price)}</p>
-        <a class="btn btn-primary" href="${makeWhatsAppLink(p)}" target="_blank">Pedir por WhatsApp</a>
+function cardTemplate(p){
+  return `
+    <article class=\"card reveal\">
+      <div class=\"card-media\">
+        <img src=\"${p.image}\" alt=\"Imagen de ${p.name}\" onerror=\"this.style.opacity=0.2\">
+      </div>
+      <div class=\"card-body\">
+        <h3 class=\"card-title\">${p.name}</h3>
+        <p class=\"card-desc\">${p.description}</p>
+        <div class=\"card-foot\">
+          <span class=\"price\">${formatPriceEUR(p.price)}</span>
+          <a class=\"btn btn-primary\" href=\"${makeMailLink(p)}\">Solicitar</a>
+        </div>
       </div>
     </article>
-  `).join("");
+  `;
+}
+
+function render(){
+  if(!defaultProducts.length){
+    emptyMsg.hidden = false;
+    grid.innerHTML = \"\";
+    return;
+  }
+  emptyMsg.hidden = true;
+  grid.innerHTML = defaultProducts.map(cardTemplate).join(\"\");  
+  observeReveal();
 }
 
 render();
+
+// ----- Efectos “chulos” de transición (IntersectionObserver) -----
+function observeReveal(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add(\"reveal-visible\");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(\".reveal, .card\").forEach(el=>observer.observe(el));
+}
+
+observeReveal();
