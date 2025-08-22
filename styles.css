@@ -1,17 +1,104 @@
 :root{
   --bg:#ffffff;
+  --bg-alt:#f6f7f9;
   --txt:#0b0d12;
+  --muted:#5e6573;
   --accent:#ef4444;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(10, 20, 40, .10);
 }
-body{font:16px system-ui; background:var(--bg); color:var(--txt); margin:0}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html,body{scroll-behavior:auto}
+}
+body{
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
+  color:var(--txt); background:var(--bg);
+}
+
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
-.brand-logo{width:40px}
-.hero{padding:50px 0;text-align:center}
-.btn{padding:10px 20px;border-radius:8px;text-decoration:none}
-.btn-primary{background:var(--accent);color:#fff}
-.section{padding:40px 0}
-.grid{display:grid;gap:20px}
-.card{border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.1)}
-.card img{width:100%;display:block}
-.card-body{padding:15px}
-.price{font-weight:bold}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:20;
+  backdrop-filter:saturate(160%) blur(8px);
+  background:rgba(255,255,255,.85); border-bottom:1px solid #edf0f5;
+  transition:background .3s ease, border-color .3s ease;
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+/* LOGO MÁS GRANDE */
+.brand-logo{width:72px;height:72px;object-fit:contain;border-radius:16px; filter:drop-shadow(0 4px 10px rgba(0,0,0,.06));}
+.brand-name{font-weight:800;font-size:1.15rem}
+.nav{display:flex; align-items:center; gap:6px}
+.nav-link{padding:.55rem .75rem; border-radius:12px; text-decoration:none; color:var(--txt); transition:transform .2s ease, background .2s ease}
+.nav-link:hover{background:var(--bg-alt); transform:translateY(-1px)}
+
+/* Botones */
+.btn{cursor:pointer; border:none; border-radius:14px; padding:.75rem 1rem; font-weight:700; text-decoration:none; display:inline-block; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease}
+.btn-primary{background:var(--accent); color:#fff; box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{background:transparent; color:var(--txt); border:1px solid #e5e7eb}
+.btn-outline:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+
+/* Hero */
+.hero{padding:72px 0 32px; background:var(--bg)}
+.hero-inner{display:grid; gap:18px; text-align:center}
+.hero h1{font-size:clamp(1.9rem,3.5vw,2.7rem); line-height:1.15; margin:0}
+.hero .accent{color:var(--accent)}
+.lead{color:var(--muted); margin:0 auto; max-width:750px}
+.cta-row{display:flex; gap:10px; justify-content:center; margin-top:8px; flex-wrap:wrap}
+
+/* Secciones */
+.section{padding:48px 0}
+.section.alt{background:var(--bg-alt)}
+.section h2{margin:0; font-size:1.6rem}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
+.card{
+  grid-column:span 12;
+  background:#fff; border:1px solid #edf0f5; border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow); display:flex; flex-direction:column;
+  transition:transform .25s ease, box-shadow .25s ease, opacity .4s ease;
+  opacity:.001; transform:translateY(10px); /* entrada */
+}
+.card:hover{transform:translateY(-4px)}
+.card-media{aspect-ratio:16/10; background:#fafafa; overflow:hidden; position:relative}
+.card-media img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .4s ease}
+.card:hover .card-media img{transform:scale(1.02)}
+/* Reducir ligeramente el logo de LaLiga (por nombre de archivo) */
+.card-media img[src*="laliga-value-edge"]{transform:scale(.92)}
+
+.card-body{padding:14px}
+.card-title{margin:0 0 6px; font-size:1.12rem}
+.card-desc{color:var(--muted); margin:0 0 12px}
+.card-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+.price{font-weight:800; font-size:1.05rem}
+.empty{padding:20px; color:var(--muted); text-align:center}
+
+@media (min-width:640px){
+  .card{grid-column:span 6}
+}
+@media (min-width:960px){
+  .card{grid-column:span 4}
+}
+
+/* Contacto & footer */
+.contact{display:grid; gap:10px}
+.contact-list{margin:0; padding-left:18px}
+.site-footer{border-top:1px solid #edf0f5; background:#fff}
+.footer-inner{display:flex; justify-content:space-between; align-items:center; padding:14px 0}
+.to-top{display:inline-flex; width:36px;height:36px; align-items:center; justify-content:center; border-radius:10px; text-decoration:none; color:var(--txt); background:var(--bg-alt); transition:transform .2s ease}
+.to-top:hover{transform:translateY(-2px)}
+
+/* Efecto de aparición (IntersectionObserver) */
+.reveal{opacity:.001; transform:translateY(10px); transition:opacity .6s ease, transform .6s ease}
+.reveal-visible{opacity:1 !important; transform:none !important}
+.card.reveal-visible{opacity:1; transform:none}
