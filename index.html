@@ -4,103 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TodoPrompt — Prompts y algoritmos para IA</title>
-  <meta name="description" content="TodoPrompt. Especialistas en el desarrollo de prompts y algoritmos para optimizar el rendimiento de tus modelos de IA." />
+  <meta name="description" content="Especialistas en prompts y algoritmos para optimizar tu IA. Diseñamos prompts de alto rendimiento y modelos a medida para potenciar tus casos de uso con IA generativa." />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="logoblanco.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="TodoPrompt, inicio">
-        <img src="logoblanco.jpg" alt="Logo TodoPrompt" class="brand-logo reveal" />
-        <span class="brand-name">TodoPrompt</span>
-      </a>
-
-      <nav class="nav">
-        <a href="#productos" class="nav-link">Productos</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
-        <button id="toggleAdmin" class="btn btn-ghost" aria-expanded="false" aria-controls="adminPanel" title="Modo gestor">⚙️</button>
-      </nav>
-    </div>
-  </header>
-
   <main id="top">
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1 class="reveal">Especialistas en prompts y algoritmos para <span class="accent">optimizar tu IA</span></h1>
-        <p class="lead reveal">
-          Diseñamos prompts de alto rendimiento y modelos a medida para potenciar tus casos de uso con IA generativa.
-        </p>
-        <div class="cta-row reveal">
-          <a id="ctaInfo" class="btn btn-primary" href="mailto:todoprompt@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n%20TodoPrompt&body=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20vuestros%20productos.%20Gracias." aria-label="Solicitar información por correo">Solicitar información</a>
-          <a href="#productos" class="btn btn-outline">Ver productos</a>
-        </div>
-      </div>
-    </section>
+    <!-- Logo grande -->
+    <header class="hero container reveal">
+      <img src="logoblanco.jpg" alt="Logo TodoPrompt" class="brand-logo" />
+      <h1>Especialistas en prompts y algoritmos para optimizar tu IA</h1>
+      <p class="lead">Diseñamos prompts de alto rendimiento y modelos a medida para potenciar tus casos de uso con IA generativa.</p>
+    </header>
 
-    <section id="productos" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="reveal">Nuestros productos</h2>
-          <div class="tools reveal">
-            <input id="searchInput" type="search" placeholder="Buscar producto..." aria-label="Buscar producto" />
-            <button id="exportBtn" class="btn btn-soft" title="Exportar productos a JSON">Exportar JSON</button>
-            <label class="file-btn">
-              Importar JSON
-              <input id="importInput" type="file" accept="application/json" />
-            </label>
+    <!-- Producto único -->
+    <section class="container reveal">
+      <article class="card">
+        <div class="card-media">
+          <img src="laliga-value-edge.jpg" alt="LaLiga Value Edge 25-26" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">LaLiga Value Edge 25-26</h2>
+          <p class="card-desc">Asistente de apuestas basado en datos de LaLiga y modelos de machine learning para orientarte en tus decisiones.</p>
+          <div class="card-foot">
+            <span class="price">29&nbsp;€</span>
+            <a id="btnSolicitar" class="btn btn-primary" target="_blank" rel="noopener">Solicitar</a>
           </div>
         </div>
-        <div id="gridProductos" class="grid"></div>
-        <p id="emptyMsg" class="empty" hidden>No hay productos que coincidan con tu búsqueda.</p>
-      </div>
+      </article>
     </section>
 
-    <section id="contacto" class="section alt">
-      <div class="container contact">
-        <h2 class="reveal">Contacto</h2>
-        <ul class="contact-list reveal">
-          <li><strong>Email:</strong> <a href="mailto:todoprompt@gmail.com">todoprompt@gmail.com</a></li>
-        </ul>
-      </div>
+    <!-- Contacto -->
+    <section class="container contact reveal">
+      <p class="contact-line">Contacto: <a href="mailto:todoprompt@gmail.com">todoprompt@gmail.com</a></p>
+      <a id="btnEmailConsulta" class="btn btn-outline" href="mailto:todoprompt@gmail.com?subject=Consulta%20TodoPrompt&body=Hola%2C%20quisiera%20hacer%20una%20consulta%20sobre%20vuestros%20servicios." aria-label="Enviar email de consulta">Enviar email de consulta</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> TodoPrompt. Todos los derechos reservados.</p>
-      <a href="#top" class="to-top" aria-label="Volver arriba">↑</a>
-    </div>
+  <footer class="container footer reveal">
+    <p>© <span id="year"></span> TodoPrompt.</p>
   </footer>
-
-  <!-- Panel gestor (añadir productos) -->
-  <aside id="adminPanel" class="admin" hidden>
-    <form id="adminForm" class="admin-form" autocomplete="off">
-      <h3>Añadir producto</h3>
-      <div class="two">
-        <label>Nombre
-          <input type="text" name="name" required />
-        </label>
-        <label>Precio (€)
-          <input type="number" name="price" min="0" step="0.01" required />
-        </label>
-      </div>
-      <label>Descripción
-        <textarea name="description" rows="3" required></textarea>
-      </label>
-      <label>Imagen (URL o archivo en la raíz)
-        <input type="text" name="image" placeholder="ej.: producto1.jpg o https://..." />
-      </label>
-      <div class="two">
-        <button class="btn btn-primary" type="submit">Guardar producto</button>
-        <button class="btn btn-ghost" type="button" id="closeAdmin">Cerrar</button>
-      </div>
-      <p class="note">⚠️ El gestor guarda en tu navegador (localStorage). Exporta el JSON para subirlo al servidor.</p>
-    </form>
-  </aside>
-
-  <div id="structured-data" aria-hidden="true"></div>
 
   <script src="app.js"></script>
 </body>
