@@ -1,108 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LaLiga Value Edge 25-26 – Pronósticos IA 1X2 | TodoPrompt</title>
-  <meta name="description" content="Sistema de pronósticos deportivos 1X2 para LaLiga 25-26 con inteligencia artificial y machine learning. Analiza estadísticas y cuotas para recomendar apuestas con valor." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TodoPrompt — Prompts y algoritmos para IA</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content" data-aos="fade-up">
-      <img src="todoprompt-logo.png" alt="TodoPrompt Logo" class="logo" />
-      <p class="league-label">
-        <img src="laliga-logo.jpeg" alt="LaLiga Logo" class="laliga-logo-small" />
-        LaLiga 2025/26
-      </p>
-      <h1>LaLiga Value Edge 25/26</h1>
-      <p class="tagline">Pronósticos deportivos 1X2 para LaLiga con inteligencia artificial</p>
-      <a href="mailto:todoprompt@gmail.com" class="cta-btn">¡Obtén tus pronósticos!</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img src="logoblanco.jpg" alt="Logo TodoPrompt" class="brand-logo" />
+        <span class="brand-name">TodoPrompt</span>
+      </a>
     </div>
   </header>
 
-  <section class="benefits" id="beneficios">
-    <h2 data-aos="fade-up">Beneficios del Sistema</h2>
-    <div class="benefits-grid">
-      <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
-        <h3>Predicciones con IA</h3>
-        <p>Algoritmo entrenado con miles de datos históricos para brindar pronósticos 1X2 precisos y objetivos.</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Especialistas en prompts y algoritmos para <span class="accent">optimizar tu IA</span></h1>
+        <p class="lead">
+          Diseñamos prompts de alto rendimiento y modelos a medida para potenciar tus casos de uso con IA generativa.
+        </p>
+        <a id="ctaWhatsapp" class="btn btn-primary" target="_blank" rel="noopener">Hablar por WhatsApp</a>
       </div>
-      <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
-        <h3>Análisis de Cuotas</h3>
-        <p>Comparación en tiempo real de cuotas de apuestas para detectar <em>value bets</em> en cada partido de LaLiga.</p>
+    </section>
+
+    <section id="productos" class="section">
+      <div class="container">
+        <h2>Nuestros productos</h2>
+        <div id="gridProductos" class="grid"></div>
       </div>
-      <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
-        <h3>Verificado por Expertos</h3>
-        <p>Resultados contrastados con pronósticos de analistas humanos, garantizando un rendimiento de nivel profesional.</p>
+    </section>
+
+    <section id="contacto" class="section alt">
+      <div class="container contact">
+        <h2>Contacto</h2>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:todoprompt@gmail.com">todoprompt@gmail.com</a></li>
+          <li><strong>WhatsApp:</strong> +34 634 633 801</li>
+        </ul>
       </div>
-      <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
-        <h3>Adaptable al Usuario</h3>
-        <p>Personaliza parámetros y filtros según tus preferencias para obtener pronósticos alineados a tu estrategia.</p>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TodoPrompt. Todos los derechos reservados.</p>
     </div>
-  </section>
+  </footer>
 
-  <section class="features" id="incluye">
-    <div class="features-content">
-      <h2 data-aos="fade-up">¿Qué incluye TodoPrompt Value Edge?</h2>
-      <ul class="features-list" data-aos="fade-up" data-aos-delay="100">
-        <li>4 informes estadísticos detallados por partido, con datos de rendimiento, historial, tendencias y más.</li>
-        <li>Un algoritmo de inteligencia artificial especializado en predicción de resultados 1X2.</li>
-        <li>Análisis comparativo de cuotas de casas de apuestas para identificar apuestas con mayor valor.</li>
-        <li>Un sistema experto que combina datos y conocimiento para recomendaciones óptimas en 1X2.</li>
-        <li>Entrega de pronósticos y reportes directamente en tu correo electrónico antes de cada jornada.</li>
-      </ul>
-    </div>
-    <div class="features-image" data-aos="fade-left" data-aos-delay="200">
-      <img src="real-data.jpg" alt="Datos y análisis del sistema" />
-    </div>
-  </section>
-
-  <section class="how-it-works" id="como-funciona">
-    <h2 data-aos="fade-up">¿Cómo funciona?</h2>
-    <ol class="steps">
-      <li data-aos="fade-up" data-aos-delay="100"><strong>Recolección de datos:</strong> El sistema recopila datos estadísticos actualizados de todos los partidos y equipos de LaLiga.</li>
-      <li data-aos="fade-up" data-aos-delay="200"><strong>Análisis con IA:</strong> Un modelo de inteligencia artificial procesa estos datos junto con las cuotas de apuestas para cada partido.</li>
-      <li data-aos="fade-up" data-aos-delay="300"><strong>Detección de valor:</strong> Se identifican cuáles partidos ofrecen las mayores probabilidades de éxito y apuestas de valor en resultados 1X2.</li>
-      <li data-aos="fade-up" data-aos-delay="400"><strong>Personalización:</strong> Puedes ajustar ciertos parámetros (como nivel de riesgo o preferencia de equipo) para adaptar las recomendaciones a tu estrategia.</li>
-      <li data-aos="fade-up" data-aos-delay="500"><strong>Envío por email:</strong> Recibes en tu correo los pronósticos recomendados antes de cada jornada.</li>
-    </ol>
-  </section>
-
-  <section class="testimonials" id="testimonios">
-    <h2 data-aos="fade-up">Testimonios de Usuarios</h2>
-    <div class="testimonial-list">
-      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-        <p>"Gracias a TodoPrompt Value Edge, mis apuestas mejoraron notablemente. Las predicciones han sido muy acertadas."</p>
-        <p class="author">- Juan P.</p>
-      </div>
-      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-        <p>"Soy analista y este sistema me sorprende. Identifica oportunidades que a veces se nos escapan a los humanos."</p>
-        <p class="author">- María G.</p>
-      </div>
-      <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
-        <p>"Al principio era escéptico, pero los resultados hablan por sí solos. He ganado más apuestas confiando en sus pronósticos 1X2."</p>
-        <p class="author">- Carlos L.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contacto">
-    <h2 data-aos="fade-up">Contacto</h2>
-    <p data-aos="fade-up">¿Listo para llevar tus pronósticos al siguiente nivel? <strong>Contáctanos</strong> para más información o para obtener tus pronósticos personalizados.</p>
-    <p data-aos="fade-up"><strong>Email:</strong> <a href="mailto:todoprompt@gmail.com">todoprompt@gmail.com</a></p>
-    <p data-aos="fade-up"><strong>Web:</strong> <a href="https://todoprompt.com" target="_blank">todoprompt.com</a></p>
-  </section>
-
-  <div class="cta-mobile">
-    <a href="mailto:todoprompt@gmail.com">📧 Contáctanos</a>
-  </div>
-
-  <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
